@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feliz Cumpleaños ARIAN DANNA</title>
+    <style>
+        body { margin: 0; padding: 0; background: linear-gradient(135deg, #0b0003, #2b0008, #0b0003); font-family: 'Arial', sans-serif; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; overflow-x: hidden; text-align: center; transition: background 1.5s ease; }
+        
+        #bienvenida { 
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%; 
+            background: linear-gradient(135deg, #000000, #3a0007);
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 40 40'%3E%3Cpath d='M20 8.35C19 3 13.5 3 10.5 6c-3 3-3 8.5 0 11.5L20 27.2l9.5-9.7c3-3 3-8.5 0-11.5-3-3-8.5-3-9.5 2.35z' fill='%23d90429' fill-opacity='0.2'/%3E%3C/svg%3E");
+            display: flex; flex-direction: column; justify-content: center; align-items: center; z-index: 30; transition: opacity 1s ease, visibility 1s; 
+        }
+
+        .btn-principal { padding: 15px 35px; font-size: 20px; background-color: #d90429; color: white; border: none; border-radius: 25px; cursor: pointer; box-shadow: 0 4px 20px rgba(217, 4, 41, 0.4); transition: all 0.3s ease; font-weight: bold; }
+        .btn-principal:hover { transform: scale(1.1); background-color: #ef233c; }
+        #pantalla-fotos, #pantalla-carta, #pantalla-extra { max-width: 900px; width: 90%; padding: 20px; display: none; opacity: 0; transition: opacity 1s ease; }
+        h1 { color: #ef233c; font-size: 3rem; margin-bottom: 10px; }
+        .galeria { display: flex; justify-content: center; gap: 25px; flex-wrap: wrap; margin-top: 35px; }
+        .foto-card { background: white; padding: 15px 15px 40px 15px; box-shadow: 0 15px 30px rgba(0,0,0,0.6); transform: rotate(-3deg); }
+        .foto-card img, .foto-card video { width: 200px; height: 200px; object-fit: cover; }
+        .carta-oscura { background-color: #120005; border: 2px solid #ef233c; border-radius: 12px; padding: 50px 45px; text-align: left; font-family: 'Georgia', serif; }
+        .carta-oscura h2 { color: #ef233c; font-size: 2.1rem; }
+        .carta-oscura p { color: #f5f5f5; font-size: 1.25rem; line-height: 1.9; font-style: italic; white-space: pre-line; }
+        .firma { text-align: right; font-weight: bold; color: #ef233c; font-size: 1.4rem; margin-top: 35px; border-top: 1px dashed #d90429; padding-top: 15px; }
+        .corazon-flotante { position: absolute; bottom: -100px; font-size: 24px; animation: subirCorazon 6s linear infinite; opacity: 0; z-index: -1; }
+        @keyframes subirCorazon { 0% { transform: translateY(0); opacity: 0; } 15% { opacity: 0.8; } 100% { transform: translateY(-110vh); opacity: 0; } }
+    </style>
+</head>
+<body>
+
+    <div id="bienvenida">
+        <h2 style="color: white; margin-bottom: 25px; text-shadow: 2px 2px 5px #000; padding: 0 20px;">Feliz cumple chica loca!</h2>
+        <button class="btn-principal" onclick="iniciarExperiencia()">Abrir Regalo 🎁</button>
+    </div>
+
+    <div id="pantalla-fotos">
+        <h1>Feliz Cumpleaños ARIANNN 🎉
+            ARIAN CUMPLE 67 AÑOS</h1>
+        <div class="galeria">
+            <div class="foto-card"><img src="foto1.jpg" alt="Foto"></div>
+            <div class="foto-card"><img src="fot2.jpg" alt="Foto"></div>
+            <div class="foto-card"><img src="fot3.jpg" alt="Foto"></div>
+            <div class="foto-card"><video controls><source src="vid1.mp4" type="video/mp4"></video></div>
+            <div class="foto-card"><video controls><source src="vid2.mp4" type="video/mp4"></video></div>
+            <div class="foto-card"><video controls><source src="vid3.mp4" type="video/mp4"></video></div>
+        </div>
+        <button class="btn-principal" onclick="irACarta()" style="margin-top: 35px;">Leer Carta 💌</button>
+    </div>
+
+    <div id="pantalla-carta">
+        <div class="carta-oscura">
+            <h2>para ARIANN,</h2>
+            <p id="texto-carta"></p>
+            <div class="firma">Con todo mi amor, siempre ✨</div>
+            <div style="margin-top: 30px; text-align: center;">
+                <p style="color: #ef233c; font-size: 1rem; margin-bottom: 10px;">Unos vídeos me recuerdan a ti más o menos</p>
+                <a href="https://youtu.be/Rvaggx1Pnoo?si=S0HdYN1dYyNS-vR5" target="_blank" style="color: #ef233c; margin: 0 10px; font-size: 1.2rem;">Ver Vídeo 1 📺</a>
+                <a href="https://youtu.be/_37jJAl1c0g?si=Maa9MGFWAQl8_y4Q" target="_blank" style="color: #ef233c; margin: 0 10px; font-size: 1.2rem;">Ver Vídeo 2 📺</a>
+            </div>
+            <button class="btn-principal" onclick="irAExtra()" style="margin-top: 30px; display: block; margin-left: auto; margin-right: auto;">Siguiente sorpresa 🎁</button>
+        </div>
+    </div>
+
+    <div id="pantalla-extra">
+        <h1>cosas random</h1>
+        <div class="galeria">
+            <div class="foto-card"><video controls onplay="pausarMusica()" onpause="seguirMusica()"><source src="vid4.mp4" type="video/mp4"></video></div>
+            <div class="foto-card"><video controls onplay="pausarMusica()" onpause="seguirMusica()"><source src="vid5.mp4" type="video/mp4"></video></div>
+            <div class="foto-card"><video controls onplay="pausarMusica()" onpause="seguirMusica()"><source src="vid6.mp4" type="video/mp4"></video></div>
+            <div class="foto-card"><video controls onplay="pausarMusica()" onpause="seguirMusica()"><source src="vid7.mp4" type="video/mp4"></video></div>
+            <div class="foto-card"><video controls onplay="pausarMusica()" onpause="seguirMusica()"><source src="vid8.mp4" type="video/mp4"></video></div>
+            <div class="foto-card"><video controls onplay="pausarMusica()" onpause="seguirMusica()"><source src="vid 9.mp4" type="video/mp4"></video></div>
+            <div class="foto-card"><video controls onplay="pausarMusica()" onpause="seguirMusica()"><source src="vid10.mp4" type="video/mp4"></video></div>
+        </div>
+        <p style="font-size: 1.5rem; margin-top: 40px; color: #ef233c;">"Prefiero intentarlo contigo mil veces a que perderte, porque no quiero empezar con alguien de nuevo, no quiero que nadie más me toque a menos que seas tu, no quiero besar otros labios que no sean los tuyos, nunca miraré otros ojos que no sean los tuyos, nunca imagine que me enamoraría de esta manera, simplemente me tienes tan enamorado."
+        </p>
+    </div>
+
+    <audio id="musica1" loop><source src="CUCO.mp3"></audio>
+    <audio id="musica2" loop><source src="bleach.mp3"></audio>
+
+    <script>
+        const contenidoCarta = `TE AMO ARIAN DANNA VERA CALAPAQUI nose si se escribe así ajajaja pero bueno te hice esto eh no es mucho pero sí que me costó jajaja estuve 2h haciendo bueno mas de dos horas, nose cuantas ya que me cansé y lo dejé para otro día ajajaja pero ya terminé. Hoy es tu cumple así que quiero decir que lo increíble que eres siempre lo eres no solo hoy tu brillas más que nadie bueno aparte de mi AJAJAKAJ y aunque a veces no encuentro las palabras exactas ( casi siempre ) quiero decirte que me encanta TODO de ti la forma que me haces sentir la forma que haces SONREÍR y lo feliz que me siento contigo siempre estarás en mi corazón. Usted me gusta tanto que me da es como rabia saber que sale y me la miran eh pero sobre todo FELIZ CUMPLE querida Arian te amo cuídate si ? Me gustaría decirte más cosas me gustaría tenerte presente jajaja quiero verte YAA!?😵‍💫 espero que la pases súper extra super bien te amo <3.`;
+
+        function iniciarExperiencia() {
+            document.getElementById('musica1').play().catch(e => console.log("Esperando interacción"));
+            document.getElementById('bienvenida').style.opacity = '0';
+            setTimeout(() => {
+                document.getElementById('bienvenida').style.display = 'none';
+                document.getElementById('pantalla-fotos').style.display = 'block';
+                setTimeout(() => { document.getElementById('pantalla-fotos').style.opacity = '1'; }, 50);
+            }, 1000);
+            for (let i = 0; i < 20; i++) { setTimeout(crearCorazon, i * 350); }
+        }
+
+        function irACarta() {
+            const fotos = document.getElementById('pantalla-fotos');
+            fotos.style.opacity = '0';
+            setTimeout(() => {
+                fotos.style.display = 'none';
+                const carta = document.getElementById('pantalla-carta');
+                carta.style.display = 'block';
+                setTimeout(() => { carta.style.opacity = '1'; escribirCarta(); }, 50);
+            }, 1000);
+        }
+
+        function irAExtra() {
+            document.getElementById('musica1').pause();
+            document.getElementById('musica2').play();
+            const carta = document.getElementById('pantalla-carta');
+            carta.style.opacity = '0';
+            setTimeout(() => {
+                carta.style.display = 'none';
+                const extra = document.getElementById('pantalla-extra');
+                extra.style.display = 'block';
+                setTimeout(() => { extra.style.opacity = '1'; }, 50);
+            }, 1000);
+        }
+
+        function pausarMusica() { document.getElementById('musica2').pause(); }
+        function seguirMusica() { document.getElementById('musica2').play(); }
+
+        function escribirCarta() {
+            const el = document.getElementById('texto-carta');
+            let i = 0;
+            function escribir() { if (i < contenidoCarta.length) { el.textContent += contenidoCarta.charAt(i); i++; setTimeout(escribir, 40); } }
+            escribir();
+        }
+
+        function crearCorazon() {
+            const corazon = document.createElement('div');
+            corazon.classList.add('corazon-flotante');
+            const iconos = ['❤️', '🖤', '🌹'];
+            corazon.innerHTML = iconos[Math.floor(Math.random() * iconos.length)];
+            corazon.style.left = Math.random() * 100 + 'vw';
+            document.body.appendChild(corazon);
+            setTimeout(() => { corazon.remove(); }, 7000);
+        }
+    </script>
+</body>
+</html>
